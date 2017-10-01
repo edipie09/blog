@@ -1,4 +1,4 @@
-baseurl = "https://username.github.io"
+baseurl = "https://ellasblog.netlify.com"
 DefaultContentLanguage = "en"
 #DefaultContentLanguage = "ja"
 title = "Ella's Data Science Blog"
