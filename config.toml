@@ -12,7 +12,7 @@ pygmentCodeFences = true
 [Params]
   subtitle = "Mercyhurst University Intro to Data Science"
   logo = "img/mu.jpg"
-  favicon = "img/favicon.ico"
+  favicon = "img/mu.jpg"
   dateFormat = "January 2, 2006"
   commit = false
   comments = true
