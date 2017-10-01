@@ -1,0 +1,48 @@
+---
+title: 'Histograms '
+author: Ella DiPietro
+date: '2017-09-30'
+slug: histograms
+categories: []
+tags:
+  - Data Visualization
+  - Histograms
+---
+
+Here's another way to visualize data from the Lahmans Baseball Data Base. Again, we'll need to bring in the tools with library:
+
+```{r, message=FALSE, warning=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+We want to see the weight distribution of baseball players, so let's pull that data from Lahman's Master Table and store the result of the query for later use:
+
+query<-"SELECT weight FROM Master"
+sqldf(query)
+result<-sqldf(query)
+
+```{r, message=FALSE, warning=FALSE, include=FALSE}
+query<-"SELECT weight FROM Master"
+sqldf(query)
+result<-sqldf(query)
+```
+
+
+Now, lets visualize the distibution in a Histogram. We'll use ggplot again for this:
+
+```{r, message=FALSE, warning=FALSE}
+ggplot()+
+  geom_histogram(data=result,aes(x=weight))
+```
+
+Now, we can manipulate the command to make the Histogram more visually appealing. Lets try changing the color, fill, and number of bins. We can also add a title:
+
+```{r, message=FALSE, warning=FALSE}
+ggplot()+
+  geom_histogram(data=result,aes(x=weight),color="blue",fill="white",bins=60)+
+  ggtitle("Weight Distibution of Baseball Players")
+  
+```
+

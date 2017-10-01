@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Histograms on Ella&#39;s Data Science Blog</title>
+    <link>/tags/histograms/</link>
+    <description>Recent content in Histograms on Ella&#39;s Data Science Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</managingEditor>
+    <webMaster>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</webMaster>
+    <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/histograms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Histograms </title>
+      <link>/post/histograms/</link>
+      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
+      <guid>/post/histograms/</guid>
+      <description>Here’s another way to visualize data from the Lahmans Baseball Data Base. Again, we’ll need to bring in the tools with library:
+library(Lahman)library(sqldf)library(ggplot2)We want to see the weight distribution of baseball players, so let’s pull that data from Lahman’s Master Table and store the result of the query for later use:
+query&amp;lt;-“SELECT weight FROM Master” sqldf(query) result&amp;lt;-sqldf(query)
+Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:</description>
+    </item>
+    
+  </channel>
+</rss>

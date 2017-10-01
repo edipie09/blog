@@ -1,0 +1,44 @@
+baseurl = "https://username.github.io"
+DefaultContentLanguage = "en"
+#DefaultContentLanguage = "ja"
+title = "Ella's Data Science Blog"
+theme = "beautifulhugo"
+metaDataFormat = "yaml"
+pygmentsUseClasses = true
+pygmentCodeFences = true
+#disqusShortname = "XXX"
+#googleAnalytics = "XXX"
+
+[Params]
+  subtitle = "Mercyhurst University Intro to Data Science"
+  logo = "img/mu.jpg"
+  favicon = "img/favicon.ico"
+  dateFormat = "January 2, 2006"
+  commit = false
+  comments = true
+#  gcse = "012345678901234567890:abcdefghijk" # Get your code from google.com/cse. Make sure to go to "Look and Feel" and change Layout to "Full Width" and Theme to "Classic"
+
+
+
+[Author]
+  name = "Ella DiPietro"
+  website = "yourwebsite.com"
+  email = "edipie09@lakers.mercyhurst.edu"
+  github = "edipie09"
+ 
+
+[[menu.main]]
+    name = "Home"
+    url = ""
+    weight = 1
+
+[[menu.main]]
+    name = "About"
+    url = "page/about/"
+    weight = 3
+
+
+[[menu.main]]
+    name = "Tags"
+    url = "tags"
+    weight = 3
