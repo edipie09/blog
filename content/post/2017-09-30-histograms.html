@@ -16,7 +16,9 @@ tags:
 library(sqldf)
 library(ggplot2)</code></pre>
 <p>We want to see the weight distribution of baseball players, so let’s pull that data from Lahman’s Master Table and store the result of the query for later use:</p>
-<p>query&lt;-“SELECT weight FROM Master” sqldf(query) result&lt;-sqldf(query)</p>
+<pre class="r"><code>query&lt;-&quot;SELECT weight FROM Master&quot;
+sqldf(query)
+result&lt;-sqldf(query)</code></pre>
 <p>Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:</p>
 <pre class="r"><code>ggplot()+
   geom_histogram(data=result,aes(x=weight))</code></pre>

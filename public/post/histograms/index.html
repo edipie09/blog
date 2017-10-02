@@ -10,12 +10,10 @@
   <meta name="twitter:title" content="Histograms " />
   <meta name="description" content="Here’s another way to visualize data from the Lahmans Baseball Data Base. Again, we’ll need to bring in the tools with library:
 library(Lahman)library(sqldf)library(ggplot2)We want to see the weight distribution of baseball players, so let’s pull that data from Lahman’s Master Table and store the result of the query for later use:
-query&lt;-“SELECT weight FROM Master” sqldf(query) result&lt;-sqldf(query)
-Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:">
+query&lt;-&quot;SELECT weight FROM Master&quot;sqldf(query)result&lt;-sqldf(query)Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:">
   <meta property="og:description" content="Here’s another way to visualize data from the Lahmans Baseball Data Base. Again, we’ll need to bring in the tools with library:
 library(Lahman)library(sqldf)library(ggplot2)We want to see the weight distribution of baseball players, so let’s pull that data from Lahman’s Master Table and store the result of the query for later use:
-query&lt;-“SELECT weight FROM Master” sqldf(query) result&lt;-sqldf(query)
-Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:">
+query&lt;-&quot;SELECT weight FROM Master&quot;sqldf(query)result&lt;-sqldf(query)Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:">
   <meta name="twitter:description" content="Here’s another way to visualize data from the Lahmans Baseball Data Base. Again, we’ll need to bring in the tools with library:
 library(Lahman)library(sqldf)library(ggplot2)We want to see the …">
   <meta name="author" content="Ella DiPietro"/>
@@ -196,7 +194,9 @@ library(Lahman)library(sqldf)library(ggplot2)We want to see the …">
 library(sqldf)
 library(ggplot2)</code></pre>
 <p>We want to see the weight distribution of baseball players, so let’s pull that data from Lahman’s Master Table and store the result of the query for later use:</p>
-<p>query&lt;-“SELECT weight FROM Master” sqldf(query) result&lt;-sqldf(query)</p>
+<pre class="r"><code>query&lt;-&quot;SELECT weight FROM Master&quot;
+sqldf(query)
+result&lt;-sqldf(query)</code></pre>
 <p>Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:</p>
 <pre class="r"><code>ggplot()+
   geom_histogram(data=result,aes(x=weight))</code></pre>

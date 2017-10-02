@@ -19,11 +19,8 @@ library(ggplot2)
 
 We want to see the weight distribution of baseball players, so let's pull that data from Lahman's Master Table and store the result of the query for later use:
 
-query<-"SELECT weight FROM Master"
-sqldf(query)
-result<-sqldf(query)
 
-```{r, message=FALSE, warning=FALSE, include=FALSE}
+```{r, message=FALSE, warning=FALSE, results="hide"}
 query<-"SELECT weight FROM Master"
 sqldf(query)
 result<-sqldf(query)

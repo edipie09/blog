@@ -31,8 +31,7 @@ query&amp;lt;-&amp;quot;Select yearID, HR From Battingwhere playerID=&amp;#39;r
       <guid>/post/histograms/</guid>
       <description>Here’s another way to visualize data from the Lahmans Baseball Data Base. Again, we’ll need to bring in the tools with library:
 library(Lahman)library(sqldf)library(ggplot2)We want to see the weight distribution of baseball players, so let’s pull that data from Lahman’s Master Table and store the result of the query for later use:
-query&amp;lt;-“SELECT weight FROM Master” sqldf(query) result&amp;lt;-sqldf(query)
-Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:</description>
+query&amp;lt;-&amp;quot;SELECT weight FROM Master&amp;quot;sqldf(query)result&amp;lt;-sqldf(query)Now, lets visualize the distibution in a Histogram. We’ll use ggplot again for this:</description>
     </item>
     
     <item>
