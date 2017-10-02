@@ -1,0 +1,39 @@
+---
+title: Time Series
+author: 'Ella DiPietro '
+date: '2017-10-02'
+slug: time-series
+categories: []
+tags:
+  - Data Visualization
+  - Time Series
+---
+
+We can use a time series graph to show how data changes over time. For this visualization we will need the same tools that we used before. Let's bring them in with library:
+
+```{r, message=FALSE, warning=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+
+Now, lets make a query to find Babe Ruth homerun totals over the course of his career. We can save the result of the query to make our time series graph:
+
+```{r}
+query<-"Select yearID, HR From Batting
+where playerID='ruthba01'"
+sqldf(query)
+result<-sqldf(query)
+```
+
+We can use ggplot again to make the time series graph with this information. We can add points and connect them with lines to show progress over time:
+
+```{r}
+ggplot()+
+  geom_point(data=result, aes(x=yearID, y=HR), size=2.5)+
+  geom_line(data=result, aes(x=yearID, y=HR))+
+  ggtitle("Babe Ruth's Homeruns Throughout his Career")
+```
+
+Looks great! What a guy. 

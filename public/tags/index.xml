@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</managingEditor>
     <webMaster>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</webMaster>
-    <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Data Visualization</title>
       <link>/tags/data-visualization/</link>
-      <pubDate>Sat, 30 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
       <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
       <guid>/tags/data-visualization/</guid>
       <description></description>
@@ -36,6 +36,15 @@
       <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
       <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
       <guid>/tags/scatter-plots/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time Series</title>
+      <link>/tags/time-series/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
+      <guid>/tags/time-series/</guid>
       <description></description>
     </item>
     

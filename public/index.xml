@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</managingEditor>
     <webMaster>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</webMaster>
-    <lastBuildDate>Sat, 30 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Time Series</title>
+      <link>/post/time-series/</link>
+      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
+      <guid>/post/time-series/</guid>
+      <description>We can use a time series graph to show how data changes over time. For this visualization we will need the same tools that we used before. Let’s bring them in with library:
+library(Lahman)library(sqldf)library(ggplot2)Now, lets make a query to find Babe Ruth homerun totals over the course of his career. We can save the result of the query to make our time series graph:
+query&amp;lt;-&amp;quot;Select yearID, HR From Battingwhere playerID=&amp;#39;ruthba01&amp;#39;&amp;quot;sqldf(query)## yearID HR## 1 1914 0## 2 1915 4## 3 1916 3## 4 1917 2## 5 1918 11## 6 1919 29## 7 1920 54## 8 1921 59## 9 1922 35## 10 1923 41## 11 1924 46## 12 1925 25## 13 1926 47## 14 1927 60## 15 1928 54## 16 1929 46## 17 1930 49## 18 1931 46## 19 1932 41## 20 1933 34## 21 1934 22## 22 1935 6result&amp;lt;-sqldf(query)We can use ggplot again to make the time series graph with this information.</description>
+    </item>
     
     <item>
       <title>Histograms </title>
@@ -36,14 +47,13 @@ query&amp;lt;-&amp;quot;SELECT playerID,sum(HR) AS career_HR,sum(SO) AS career_S
     </item>
     
     <item>
-      <title>About me</title>
+      <title>Ella DiPietro</title>
       <link>/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
       <guid>/page/about/</guid>
-      <description>My name is Inigo Montoya. I have the following qualities:
- I rock a great mustache I&amp;rsquo;m extremely loyal to my family  What else do you need?
-my history To be honest, I&amp;rsquo;m having some trouble remembering right now, so why don&amp;rsquo;t you just watch my movie and it will answer all your questions.</description>
+      <description>Hello! Welcome to my blog! My name is Ella and I am an Intelligence and Religious Studies major at Mercyhurst. This blog will offer quick tutorials on how to use R for Data Science.
+Email: edipie09@lakers.mercyhurst.edu</description>
     </item>
     
   </channel>

@@ -1,16 +1,10 @@
 ---
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: Ella DiPietro
+subtitle: Student at Mercyhurst University 
 comments: false
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Hello! Welcome to my blog! My name is Ella and I am an Intelligence and Religious Studies major at Mercyhurst. This blog will offer quick tutorials on how to use R for Data Science. 
 
-- I rock a great mustache
-- I'm extremely loyal to my family
 
-What else do you need?
-
-### my history
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+Email: edipie09@lakers.mercyhurst.edu
