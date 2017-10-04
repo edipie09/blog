@@ -1,0 +1,62 @@
+---
+title: Bar Plot
+author: Ella DiPietro
+date: '2017-10-03'
+slug: bar-plot
+categories: []
+tags:
+  - Data Visualization
+  - Bar Plot
+---
+
+
+
+<p>Now, for a final example, we will make a Bar Plot. We want to look only at the year 1980 and see the names of teams and team homerun totals for that year. Again, we’ll need those three tools:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<p>Great, now lets extract the data we’ll need to make the bar plot. We’ll store the results:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT name,HR 
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR&quot;
+
+sqldf(query)</code></pre>
+<pre><code>##                     name  HR
+## 1          New York Mets  61
+## 2       San Diego Padres  67
+## 3         Houston Astros  75
+## 4   San Francisco Giants  80
+## 5      Cleveland Indians  89
+## 6      Chicago White Sox  91
+## 7        Minnesota Twins  99
+## 8    St. Louis Cardinals 101
+## 9       Seattle Mariners 104
+## 10     California Angels 106
+## 11          Chicago Cubs 107
+## 12       Cincinnati Reds 113
+## 13        Montreal Expos 114
+## 14    Kansas City Royals 115
+## 15    Pittsburgh Pirates 116
+## 16 Philadelphia Phillies 117
+## 17         Texas Rangers 124
+## 18     Toronto Blue Jays 126
+## 19     Oakland Athletics 137
+## 20        Detroit Tigers 143
+## 21        Atlanta Braves 144
+## 22   Los Angeles Dodgers 148
+## 23     Baltimore Orioles 156
+## 24        Boston Red Sox 162
+## 25      New York Yankees 189
+## 26     Milwaukee Brewers 203</code></pre>
+<pre class="r"><code>result&lt;-sqldf(query)</code></pre>
+<p>Now that we have this data in order from least to most homeruns, lets visualize it on a bar plot. We’ll customize it by chnaging the color and fill of the bars and the names of the labels:</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat=&quot;identity&quot;,color=&quot;white&quot;,fill=&quot;blue&quot;)+
+  coord_flip()+
+  ylab(&#39;Homeruns&#39;)+
+  xlab(&#39;Team&#39;)+
+  ggtitle(&quot;Homerun Distribution of Teams in 1980&quot;)</code></pre>
+<p><img src="/post/2017-10-03-bar-plot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>In order to see the bars in order from most to least homeruns, we need to use this code, because if we don’t the bars will be organized in alphabetical order by team name. The purpose of this code is to specify that we want the bars to display in the same way as the results of our query:</p>
+<pre class="r"><code>result$name&lt;-factor(result$name,levels=result$name)</code></pre>

@@ -164,6 +164,37 @@
         <div class="posts-list">
           
             <article class="post-preview">
+              <a href="/post/bar-plot/">
+                <h2 class="post-title">Bar Plot</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                Posted on October 3, 2017
+              </p>
+              <div class="post-entry">
+                
+                  Now, for a final example, we will make a Bar Plot. We want to look only at the year 1980 and see the names of teams and team homerun totals for that year. Again, we’ll need those three tools:
+library(Lahman)library(sqldf)library(ggplot2)Great, now lets extract the data we’ll need to make the bar plot. We’ll store the results:
+query&lt;-&quot;SELECT name,HR FROM TeamsWHERE yearID=1980ORDER BY HR&quot;sqldf(query)## name HR## 1 New York Mets 61## 2 San Diego Padres 67## 3 Houston Astros 75## 4 San Francisco Giants 80## 5 Cleveland Indians 89## 6 Chicago White Sox 91## 7 Minnesota Twins 99## 8 St.
+                  <a href="/post/bar-plot/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+                <span class="post-meta">
+                  
+                    #<a href="/tags/data-visualization/">Data Visualization</a>&nbsp;
+                  
+                    #<a href="/tags/bar-plot/">Bar Plot</a>&nbsp;
+                  
+                </span>
+              
+
+            </article>
+          
+            <article class="post-preview">
               <a href="/post/time-series/">
                 <h2 class="post-title">Time Series</h2>
 

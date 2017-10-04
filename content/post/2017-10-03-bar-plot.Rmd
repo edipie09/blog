@@ -1,0 +1,52 @@
+---
+title: Bar Plot
+author: Ella DiPietro
+date: '2017-10-03'
+slug: bar-plot
+categories: []
+tags:
+  - Data Visualization
+  - Bar Plot
+---
+
+Now, for a final example, we will make a Bar Plot. We want to look only at the year 1980 and see the names of teams and team homerun totals for that year. Again, we'll need those three tools:
+
+```{r, message=FALSE, warning=FALSE}
+library(Lahman)
+library(sqldf)
+library(ggplot2)
+```
+
+Great, now lets extract the data we'll need to make the bar plot. We'll store the results:
+
+
+
+```{r}
+query<-"SELECT name,HR 
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR"
+
+sqldf(query)
+result<-sqldf(query)
+
+```
+
+Now that we have this data in order from least to most homeruns, lets visualize it on a bar plot. We'll customize it by chnaging the color and fill of the bars and the names of the labels:
+
+```{r}
+ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat="identity",color="white",fill="blue")+
+  coord_flip()+
+  ylab('Homeruns')+
+  xlab('Team')+
+  ggtitle("Homerun Distribution of Teams in 1980")
+
+```
+
+In order to see the bars in order from most to least homeruns, we need to use this code, because if we don't the bars will be organized in alphabetical order by team name. The purpose of this code is to specify that we want the bars to display in the same way as the results of our query: 
+
+```{r, message=FALSE, warning=FALSE}
+result$name<-factor(result$name,levels=result$name)
+```
+

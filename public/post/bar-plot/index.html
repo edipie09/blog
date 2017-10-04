@@ -5,20 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Tags</title>
-  <meta property="og:title" content="Tags" />
-  <meta name="twitter:title" content="Tags" />
+  <title>Bar Plot</title>
+  <meta property="og:title" content="Bar Plot" />
+  <meta name="twitter:title" content="Bar Plot" />
+  <meta name="description" content="Now, for a final example, we will make a Bar Plot. We want to look only at the year 1980 and see the names of teams and team homerun totals for that year. Again, we’ll need those three tools:
+library(Lahman)library(sqldf)library(ggplot2)Great, now lets extract the data we’ll need to make the bar plot. We’ll store the results:
+query&lt;-&quot;SELECT name,HR FROM TeamsWHERE yearID=1980ORDER BY HR&quot;sqldf(query)## name HR## 1 New York Mets 61## 2 San Diego Padres 67## 3 Houston Astros 75## 4 San Francisco Giants 80## 5 Cleveland Indians 89## 6 Chicago White Sox 91## 7 Minnesota Twins 99## 8 St.">
+  <meta property="og:description" content="Now, for a final example, we will make a Bar Plot. We want to look only at the year 1980 and see the names of teams and team homerun totals for that year. Again, we’ll need those three tools:
+library(Lahman)library(sqldf)library(ggplot2)Great, now lets extract the data we’ll need to make the bar plot. We’ll store the results:
+query&lt;-&quot;SELECT name,HR FROM TeamsWHERE yearID=1980ORDER BY HR&quot;sqldf(query)## name HR## 1 New York Mets 61## 2 San Diego Padres 67## 3 Houston Astros 75## 4 San Francisco Giants 80## 5 Cleveland Indians 89## 6 Chicago White Sox 91## 7 Minnesota Twins 99## 8 St.">
+  <meta name="twitter:description" content="Now, for a final example, we will make a Bar Plot. We want to look only at the year 1980 and see the names of teams and team homerun totals for that year. Again, we’ll need those three tools: …">
   <meta name="author" content="Ella DiPietro"/>
   <link href='/img/mu.jpg' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="/img/mu.jpg" />
   <meta name="twitter:image" content="/img/mu.jpg" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="/tags/" />
+  <meta property="og:url" content="/post/bar-plot/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ella&#39;s Data Science Blog" />
 
   <meta name="generator" content="Hugo 0.29" />
-  <link rel="canonical" href="/tags/" />
+  <link rel="canonical" href="/post/bar-plot/" />
   <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Ella&#39;s Data Science Blog">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -157,9 +164,16 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>Tags</h1>
+            <div class="post-heading">
+              <h1>Bar Plot</h1>
                 
+                
+                  <span class="post-meta">
+  Posted on October 3, 2017
+  
+</span>
+
+
                 
             </div>
           </div>
@@ -170,29 +184,78 @@
 
 
     
-  
-  <div class="container" role="main">
-    <article class="post-preview">
-      <div class="list-group col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3">
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Now, for a final example, we will make a Bar Plot. We want to look only at the year 1980 and see the names of teams and team homerun totals for that year. Again, we’ll need those three tools:</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)
+library(ggplot2)</code></pre>
+<p>Great, now lets extract the data we’ll need to make the bar plot. We’ll store the results:</p>
+<pre class="r"><code>query&lt;-&quot;SELECT name,HR 
+FROM Teams
+WHERE yearID=1980
+ORDER BY HR&quot;
+
+sqldf(query)</code></pre>
+<pre><code>##                     name  HR
+## 1          New York Mets  61
+## 2       San Diego Padres  67
+## 3         Houston Astros  75
+## 4   San Francisco Giants  80
+## 5      Cleveland Indians  89
+## 6      Chicago White Sox  91
+## 7        Minnesota Twins  99
+## 8    St. Louis Cardinals 101
+## 9       Seattle Mariners 104
+## 10     California Angels 106
+## 11          Chicago Cubs 107
+## 12       Cincinnati Reds 113
+## 13        Montreal Expos 114
+## 14    Kansas City Royals 115
+## 15    Pittsburgh Pirates 116
+## 16 Philadelphia Phillies 117
+## 17         Texas Rangers 124
+## 18     Toronto Blue Jays 126
+## 19     Oakland Athletics 137
+## 20        Detroit Tigers 143
+## 21        Atlanta Braves 144
+## 22   Los Angeles Dodgers 148
+## 23     Baltimore Orioles 156
+## 24        Boston Red Sox 162
+## 25      New York Yankees 189
+## 26     Milwaukee Brewers 203</code></pre>
+<pre class="r"><code>result&lt;-sqldf(query)</code></pre>
+<p>Now that we have this data in order from least to most homeruns, lets visualize it on a bar plot. We’ll customize it by chnaging the color and fill of the bars and the names of the labels:</p>
+<pre class="r"><code>ggplot()+
+  geom_bar(data=result,aes(x=name,y=HR),stat=&quot;identity&quot;,color=&quot;white&quot;,fill=&quot;blue&quot;)+
+  coord_flip()+
+  ylab(&#39;Homeruns&#39;)+
+  xlab(&#39;Team&#39;)+
+  ggtitle(&quot;Homerun Distribution of Teams in 1980&quot;)</code></pre>
+<p><img src="/post/2017-10-03-bar-plot_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>In order to see the bars in order from most to least homeruns, we need to use this code, because if we don’t the bars will be organized in alphabetical order by team name. The purpose of this code is to specify that we want the bars to display in the same way as the results of our query:</p>
+<pre class="r"><code>result$name&lt;-factor(result$name,levels=result$name)</code></pre>
+
+      </article>
+
+      <ul class="pager blog-pager">
+        
+          <li class="previous">
+            <a href="/post/time-series/" data-toggle="tooltip" data-placement="top" title="Time Series">&larr; Previous Post</a>
+          </li>
+        
+        
+      </ul>
+
       
-      <a href="/tags/data-visualization/" class="list-group-item">
-          data-visualization<span class="badge">4</span></a>
+        
       
-      <a href="/tags/bar-plot/" class="list-group-item">
-          bar-plot<span class="badge">1</span></a>
-      
-      <a href="/tags/histograms/" class="list-group-item">
-          histograms<span class="badge">1</span></a>
-      
-      <a href="/tags/scatter-plots/" class="list-group-item">
-          scatter-plots<span class="badge">1</span></a>
-      
-      <a href="/tags/time-series/" class="list-group-item">
-          time-series<span class="badge">1</span></a>
-      
-      </div>
-    </article>
+
+    </div>
   </div>
+</div>
 
     <footer>
   <div class="container">

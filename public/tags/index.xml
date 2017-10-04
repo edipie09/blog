@@ -7,15 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</managingEditor>
     <webMaster>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</webMaster>
-    <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Bar Plot</title>
+      <link>/tags/bar-plot/</link>
+      <pubDate>Tue, 03 Oct 2017 00:00:00 +0000</pubDate>
+      <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
+      <guid>/tags/bar-plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data Visualization</title>
       <link>/tags/data-visualization/</link>
-      <pubDate>Mon, 02 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 03 Oct 2017 00:00:00 +0000</pubDate>
       <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
       <guid>/tags/data-visualization/</guid>
       <description></description>

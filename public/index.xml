@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</managingEditor>
     <webMaster>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</webMaster>
-    <lastBuildDate>Mon, 02 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bar Plot</title>
+      <link>/post/bar-plot/</link>
+      <pubDate>Tue, 03 Oct 2017 00:00:00 +0000</pubDate>
+      <author>edipie09@lakers.mercyhurst.edu (Ella DiPietro)</author>
+      <guid>/post/bar-plot/</guid>
+      <description>Now, for a final example, we will make a Bar Plot. We want to look only at the year 1980 and see the names of teams and team homerun totals for that year. Again, we’ll need those three tools:
+library(Lahman)library(sqldf)library(ggplot2)Great, now lets extract the data we’ll need to make the bar plot. We’ll store the results:
+query&amp;lt;-&amp;quot;SELECT name,HR FROM TeamsWHERE yearID=1980ORDER BY HR&amp;quot;sqldf(query)## name HR## 1 New York Mets 61## 2 San Diego Padres 67## 3 Houston Astros 75## 4 San Francisco Giants 80## 5 Cleveland Indians 89## 6 Chicago White Sox 91## 7 Minnesota Twins 99## 8 St.</description>
+    </item>
     
     <item>
       <title>Time Series</title>
